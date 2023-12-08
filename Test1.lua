@@ -1649,7 +1649,7 @@ Border_32.Name = "Border"
 
 -- Scripts:
 
-local function NZBK_fake_script() -- HitBox.LocalScript 
+local function LCNU_fake_script() -- HitBox.LocalScript 
 	local script = Instance.new('LocalScript', HitBox)
 
 	local Main = script.Parent.Parent.Parent.Parent.Parent.Parent.Infinity
@@ -1668,8 +1668,8 @@ local function NZBK_fake_script() -- HitBox.LocalScript
 		end
 	end)
 end
-coroutine.wrap(NZBK_fake_script)()
-local function UXXQD_fake_script() -- HitBox_2.LocalScript 
+coroutine.wrap(LCNU_fake_script)()
+local function XCFHSFF_fake_script() -- HitBox_2.LocalScript 
 	local script = Instance.new('LocalScript', HitBox_2)
 
 	local Main = script.Parent.Parent.Parent.Parent.Parent.Parent.Infinity
@@ -1688,8 +1688,8 @@ local function UXXQD_fake_script() -- HitBox_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(UXXQD_fake_script)()
-local function CYDNEAM_fake_script() -- HitBox_3.LocalScript 
+coroutine.wrap(XCFHSFF_fake_script)()
+local function OHTZAI_fake_script() -- HitBox_3.LocalScript 
 	local script = Instance.new('LocalScript', HitBox_3)
 
 	local Main = script.Parent.Parent.Parent.Parent.Parent.Parent.Infinity
@@ -1708,8 +1708,8 @@ local function CYDNEAM_fake_script() -- HitBox_3.LocalScript
 		end
 	end)
 end
-coroutine.wrap(CYDNEAM_fake_script)()
-local function FGZDUD_fake_script() -- HitBox_4.LocalScript 
+coroutine.wrap(OHTZAI_fake_script)()
+local function XZCOIBQ_fake_script() -- HitBox_4.LocalScript 
 	local script = Instance.new('LocalScript', HitBox_4)
 
 	local Main = script.Parent.Parent.Parent.Parent.Parent.Parent.Infinity
@@ -1728,8 +1728,8 @@ local function FGZDUD_fake_script() -- HitBox_4.LocalScript
 		end
 	end)
 end
-coroutine.wrap(FGZDUD_fake_script)()
-local function FRCHSDJ_fake_script() -- Openclose.Settings 
+coroutine.wrap(XZCOIBQ_fake_script)()
+local function RODKSL_fake_script() -- Openclose.Settings 
 	local script = Instance.new('LocalScript', Openclose)
 
 	local Button = script.Parent
@@ -1738,6 +1738,7 @@ local function FRCHSDJ_fake_script() -- Openclose.Settings
 	local ExeFrame = script.Parent.Parent.Parent.ExecutorFrame
 	local Back = script.Parent.Parent.Parent.Background
 	local Main = script.Parent.Parent.Parent.Parent.Infinity
+	local UserInput = game:GetService('UserInputService')
 	local FrameNames = {'ExecutorFrame', 'ScriptHubFrame', 'SaveScriptFrame', 'SettingsFrame'}
 	
 	Button.MouseButton1Click:Connect(function ()
@@ -1759,25 +1760,44 @@ local function FRCHSDJ_fake_script() -- Openclose.Settings
 			Back.Visible = true	
 		end
 	end)
+	UserInput.InputBegan:Connect(function ()
+		if Bool.Value == true then
+			Bool.Value = false
+			for _, v in pairs(Main:GetChildren()) do
+				if table.find(FrameNames, v.Name) and v:IsA('Frame') then
+					v:TweenPosition(UDim2.new(0.271, 0,0.246, -600), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, 0.3, true)
+					v.Check.Value = false	
+				end
+			end
+			Frame:TweenPosition(UDim2.new(0.991, 13,0.244, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, 0.3, true)
+			Back.Visible = false
+		else
+			Bool.Value = true
+			script.Parent.Parent.Parent.ExecutorFrame.Check.Value = true
+			ExeFrame:TweenPosition(UDim2.new(0.271, 0,0.246, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, 0.3, true)
+			Frame:TweenPosition(UDim2.new(0.915, 0,0.244, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, 0.3, true)
+			Back.Visible = true	
+		end
+	end)
 end
-coroutine.wrap(FRCHSDJ_fake_script)()
-local function SPRY_fake_script() -- Hiitbox.LocalScript 
+coroutine.wrap(RODKSL_fake_script)()
+local function XYGGRH_fake_script() -- Hiitbox.LocalScript 
 	local script = Instance.new('LocalScript', Hiitbox)
 
 	script.Parent.MouseButton1Click:Connect(function ()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Minhtriettt/Free-Script/main/MTriet-Hub.lua"))()
 	end)
 end
-coroutine.wrap(SPRY_fake_script)()
-local function FEOV_fake_script() -- Hiitbox_2.LocalScript 
+coroutine.wrap(XYGGRH_fake_script)()
+local function MUQSXEC_fake_script() -- Hiitbox_2.LocalScript 
 	local script = Instance.new('LocalScript', Hiitbox_2)
 
 	script.Parent.MouseButton1Click:Connect(function ()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Minhtriettt/Free-Script/main/MTriet-Hub.lua"))()
 	end)
 end
-coroutine.wrap(FEOV_fake_script)()
-local function YGEZ_fake_script() -- SaveScriptFrame.Settings 
+coroutine.wrap(MUQSXEC_fake_script)()
+local function DNNSM_fake_script() -- SaveScriptFrame.Settings 
 	local script = Instance.new('LocalScript', SaveScriptFrame)
 
 	local UploadButton = script.Parent.SearchFrame.AddScript
@@ -1808,8 +1828,8 @@ local function YGEZ_fake_script() -- SaveScriptFrame.Settings
 	
 	
 end
-coroutine.wrap(YGEZ_fake_script)()
-local function JKGJGI_fake_script() -- Hitbox.LocalScript 
+coroutine.wrap(DNNSM_fake_script)()
+local function FPIYPE_fake_script() -- Hitbox.LocalScript 
 	local script = Instance.new('LocalScript', Hitbox)
 
 	local Button = script.Parent
@@ -1829,8 +1849,8 @@ local function JKGJGI_fake_script() -- Hitbox.LocalScript
 	end)
 	
 end
-coroutine.wrap(JKGJGI_fake_script)()
-local function WKAKREQ_fake_script() -- Hitbox_2.LocalScript 
+coroutine.wrap(FPIYPE_fake_script)()
+local function IDICR_fake_script() -- Hitbox_2.LocalScript 
 	local script = Instance.new('LocalScript', Hitbox_2)
 
 	local Button = script.Parent
@@ -1847,8 +1867,8 @@ local function WKAKREQ_fake_script() -- Hitbox_2.LocalScript
 	end)
 	
 end
-coroutine.wrap(WKAKREQ_fake_script)()
-local function XBHXS_fake_script() -- Hitbox_3.LocalScript 
+coroutine.wrap(IDICR_fake_script)()
+local function GQKMFR_fake_script() -- Hitbox_3.LocalScript 
 	local script = Instance.new('LocalScript', Hitbox_3)
 
 	local button = script.Parent
@@ -1931,8 +1951,8 @@ local function XBHXS_fake_script() -- Hitbox_3.LocalScript
 		Teleport()
 	end)
 end
-coroutine.wrap(XBHXS_fake_script)()
-local function RITSUBR_fake_script() -- Hitbox_4.LocalScript 
+coroutine.wrap(GQKMFR_fake_script)()
+local function SPGA_fake_script() -- Hitbox_4.LocalScript 
 	local script = Instance.new('LocalScript', Hitbox_4)
 
 	local button = script.Parent
@@ -1940,36 +1960,36 @@ local function RITSUBR_fake_script() -- Hitbox_4.LocalScript
 		game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game:GetService("Players").LocalPlayer)
 	end)
 end
-coroutine.wrap(RITSUBR_fake_script)()
-local function OUZUZRN_fake_script() -- Execute.LocalScript 
+coroutine.wrap(SPGA_fake_script)()
+local function FGYKEGG_fake_script() -- Execute.LocalScript 
 	local script = Instance.new('LocalScript', Execute)
 
 	script.Parent.MouseButton1Click:Connect(function ()
 		script.Parent.Parent.ExecuteEvent:FireServer(script.Parent.Parent.Parent.Code.Text)
 	end)
 end
-coroutine.wrap(OUZUZRN_fake_script)()
-local function UFCDKAV_fake_script() -- Clear.LocalScript 
+coroutine.wrap(FGYKEGG_fake_script)()
+local function WKDA_fake_script() -- Clear.LocalScript 
 	local script = Instance.new('LocalScript', Clear)
 
 	script.Parent.MouseButton1Click:Connect(function ()
 		script.Parent.Parent.Parent.Code.Text = ""
 	end)
 end
-coroutine.wrap(UFCDKAV_fake_script)()
-local function OTEW_fake_script() -- IYFE.LocalScript 
+coroutine.wrap(WKDA_fake_script)()
+local function URVP_fake_script() -- IYFE.LocalScript 
 	local script = Instance.new('LocalScript', IYFE)
 
 	script.Parent.MouseButton1Click:Connect(function ()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",true))()
 	end)
 end
-coroutine.wrap(OTEW_fake_script)()
-local function TWLHH_fake_script() -- Dex.LocalScript 
+coroutine.wrap(URVP_fake_script)()
+local function UUOQL_fake_script() -- Dex.LocalScript 
 	local script = Instance.new('LocalScript', Dex)
 
 	script.Parent.MouseButton1Click:Connect(function ()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
 	end)
 end
-coroutine.wrap(TWLHH_fake_script)()
+coroutine.wrap(UUOQL_fake_script)()
