@@ -50,17 +50,9 @@ UIStroke.Parent = ButtonPress
 local function RUQQW_fake_script() -- ButtonPress.LocalScript 
 	local script = Instance.new('LocalScript', ButtonPress)
 
-    script.Parent.MouseButton1Click:Connect(function ()
-        for _, v in pairs(game.CoreGui:GetChildren()) do
-            if v:IsA('ScreenGui') and v.Name == 'ScreenGui' then
-                if v.Enabled == true then
-                    v.Enabled = false
-                end
-                if v.Enabled == false then
-                    v.Enabled = true
-                end
-            end
-        end
-    end)
+local KeyPress = function(v)
+    return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game)
+end
+	KeyPress('J')
 end
 coroutine.wrap(RUQQW_fake_script)()
