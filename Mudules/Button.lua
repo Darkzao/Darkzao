@@ -50,21 +50,17 @@ UIStroke.Parent = ButtonPress
 local function RUQQW_fake_script() -- ButtonPress.LocalScript 
 	local script = Instance.new('LocalScript', ButtonPress)
 
-	function GetUi()
-		for _, v in pairs(game:GetService('CoreGui'):GetChildren()) do
-			if v:IsA('ScreenGui') and v.Name == 'ScreenGui' then
-				return v
-			end
-		end
-	end
-	
-	script.Parent.MouseButton1Click:Connect(function ()
-		if GetUi().Enabled == true then
-			GetUi().Enabled = false
-		end
-		if GetUi().Enabled == false then
-			GetUi().Enabled = true
-		end
-	end)
+    script.Parent.MouseButton1Click:Connect(function ()
+        for _, v in pairs(game.CoreGui:GetChildren()) do
+            if v:IsA('ScreenGui') and v.Name == 'ScreenGui' then
+                if v.Enabled == true then
+                    v.Enabled = false
+                end
+                if v.Enabled == false then
+                    v.Enabled = true
+                end
+            end
+        end
+    end)
 end
 coroutine.wrap(RUQQW_fake_script)()
