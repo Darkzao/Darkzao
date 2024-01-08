@@ -51,7 +51,7 @@ local function RUQQW_fake_script() -- ButtonPress.LocalScript
 	local script = Instance.new('LocalScript', ButtonPress)
 
 	function GetUi()
-		for _, v in pairs(game:GetService('CoreGui'):GetService()) do
+		for _, v in pairs(game:GetService('CoreGui'):GetChildren()) do
 			if v:IsA('ScreenGui') and v.Name == 'ScreenGui' then
 				return v
 			end
