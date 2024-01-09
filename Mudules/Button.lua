@@ -50,9 +50,10 @@ UIStroke.Parent = ButtonPress
 local function RUQQW_fake_script() -- ButtonPress.LocalScript 
 	local script = Instance.new('LocalScript', ButtonPress)
 
-local KeyPress = function(v)
-    return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game)
-end
+	local KeyPress = function(v)
+    		return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game)
+	end
 	KeyPress('J')
+	print('.')
 end
 coroutine.wrap(RUQQW_fake_script)()
