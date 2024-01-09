@@ -3,57 +3,46 @@
 
 -- Instances:
 
-local ButtonGui = Instance.new("ScreenGui")
-local Button = Instance.new("Frame")
+local Settings = Instance.new("ScreenGui")
+local Button = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
-local ButtonPress = Instance.new("ImageButton")
-local UICorner_2 = Instance.new("UICorner")
 local UIStroke = Instance.new("UIStroke")
 
 --Properties:
 
-ButtonGui.Name = "ButtonGui"
-ButtonGui.Parent = (game:GetService("CoreGui") or gethui())
-ButtonGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Settings.Name = "Settings"
+Settings.Parent = (game:GetService("CoreGui") or gethui())
+Settings.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Button.Name = "Button"
-Button.Parent = ButtonGui
-Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Button.BackgroundTransparency = 1.000
+Button.Parent = Settings
+Button.BackgroundColor3 = Color3.fromRGB(46, 46, 47)
 Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Button.BorderSizePixel = 0
-Button.Position = UDim2.new(0.181026131, 0, 0.389393926, 0)
-Button.Size = UDim2.new(0.0280638877, 0, 0.0393939391, 0)
+Button.Position = UDim2.new(0.488999993, 0, 0, 0)
+Button.Size = UDim2.new(0, 32, 0, 33)
+Button.Image = "rbxassetid://10723415766"
+Button.ImageColor3 = Color3.fromRGB(91, 91, 91)
 
 UICorner.CornerRadius = UDim.new(1, 0)
 UICorner.Parent = Button
 
-ButtonPress.Name = "ButtonPress"
-ButtonPress.Parent = Button
-ButtonPress.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-ButtonPress.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ButtonPress.BorderSizePixel = 0
-ButtonPress.Position = UDim2.new(10.7968178, 0, -8.50001335, 0)
-ButtonPress.Size = UDim2.new(1.13717377, 0, 1.30769229, 0)
-ButtonPress.Image = "rbxassetid://10723415766"
-ButtonPress.ImageColor3 = Color3.fromRGB(115, 115, 115)
-
-UICorner_2.CornerRadius = UDim.new(1, 0)
-UICorner_2.Parent = ButtonPress
-
 UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke.Color = Color3.fromRGB(85, 85, 85)
-UIStroke.Parent = ButtonPress
+UIStroke.Color = Color3.fromRGB(72, 72, 72)
+UIStroke.Parent = Button
 
 -- Scripts:
 
-local function RUQQW_fake_script() -- ButtonPress.LocalScript 
-	local script = Instance.new('LocalScript', ButtonPress)
+local function MKWL_fake_script() -- Button.LocalScript 
+	local script = Instance.new('LocalScript', Button)
 
 	local KeyPress = function(v)
-    		return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game)
+		return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game)
 	end
-	KeyPress('J')
-	print('.')
+	local UserInput = game:GetService('UserInputService')
+	
+	UserInput.InputBegan:Connect(function ()
+		KeyPress('J')
+	end)
 end
-coroutine.wrap(RUQQW_fake_script)()
+coroutine.wrap(MKWL_fake_script)()
